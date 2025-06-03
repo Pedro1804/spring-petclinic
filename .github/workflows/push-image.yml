@@ -41,7 +41,7 @@ jobs:
 
       - name: downcase REPO
         run: |
-          echo "REPO=${GITHUB_REPOSITORY,,}" >> ${GITHUB_ENV}
+          echo "REPO=${GITHUB_ACTOR,,}" >> ${GITHUB_ENV}
 
       - name: Push Docker image
         run: docker push ghcr.io/${REPO}/spring-petclinic:3.4.0-SNAPSHOT

@@ -43,5 +43,9 @@ jobs:
         run: |
           echo "REPO=${GITHUB_ACTOR,,}" >> ${GITHUB_ENV}
 
+      - name: Tag image
+        run : |
+            docker tag spring-petclinic:3.4.0-SNAPSHOT ghcr.io/${REPO}/spring-petclinic:3.4.0-SNAPSHOT
+
       - name: Push Docker image
         run: docker push ghcr.io/${REPO}/spring-petclinic:3.4.0-SNAPSHOT
